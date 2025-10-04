@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Express } from 'express';
 // import { CreateUploadDto } from './dto/create-upload.dto';
 @Injectable()
 export class UploadService {
