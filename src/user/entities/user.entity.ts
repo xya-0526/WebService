@@ -19,8 +19,7 @@ export class User {
   phoneNumber: string;
   @Column()
   passWord: string;
-
-  @Column()
+  @Column({ type: 'varchar', length: 255, default: '' })
   @IsEmail({}, { message: '邮箱格式不正确', each: false })
   email: string;
   @OneToOne(() => Avatar, (avater) => avater.user, { cascade: true })

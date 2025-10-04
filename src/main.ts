@@ -23,6 +23,6 @@ async function bootstrap() {
     // credentials: true, // 如果要携带 cookie，需要改成具体域名 + true
   });
   const port = Number(process.env.PORT) || 3000;
-await app.listen(port,'0.0.0.0');
+  await app.listen(port, '0.0.0.0');
 }
 bootstrap();
