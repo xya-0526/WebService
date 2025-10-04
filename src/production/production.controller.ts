@@ -25,7 +25,7 @@ import { UpdateProductionDto } from './dto/update-production.dto';
     transform: true,
   }),
 )
-@Controller('api/production')
+@Controller('production')
 export class ProductionController {
   constructor(private readonly productionService: ProductionService) {}
   @Post('/create')

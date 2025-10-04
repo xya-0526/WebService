@@ -25,7 +25,7 @@ import { AuthGuard } from '@nestjs/passport';
     transform: true,
   }),
 )
-@Controller('api/artical')
+@Controller('artical')
 export class ArticalController {
   constructor(private readonly articalService: ArticalService) {}
   @Post('/create')
