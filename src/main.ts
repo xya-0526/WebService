@@ -15,15 +15,14 @@ async function bootstrap() {
   app.useStaticAssets(join(__dirname, 'images'), {
     prefix: '/xya',
   });
-  const configService = app.get(ConfigService);
-  const port = configService.get<number>('PORT') || 3000;
-
+  app.get(ConfigService);
   app.enableCors({
     origin: '*', // 允许所有来源（开发环境）
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
-    credentials: true, // 如果要携带 cookie，需要改成具体域名 + true
+    // credentials: true, // 如果要携带 cookie，需要改成具体域名 + true
   });
-  await app.listen(process.env.PORT ?? port);
+  const port = Number(process.env.PORT) || 3000;
+await app.listen(port);
 }
 bootstrap();
