@@ -19,5 +19,6 @@
     "noFallthroughCasesInSwitch": false,
     "rootDir": "src",
   },
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "test"]
 }
