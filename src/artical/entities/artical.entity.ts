@@ -6,7 +6,7 @@ export class Artical {
   id: number;
   @Column()
   title: string;
-  @Column({type:'longtext'})
+  @Column({type:'text'})
   content: string;
   @Column()
   category: string;
