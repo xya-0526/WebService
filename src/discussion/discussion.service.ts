@@ -20,7 +20,8 @@ export class DiscussionService {
     await this.user.save(user)
     return {
       code:0,
-      message:'留言成功'
+      message:'留言成功',
+      data:dis
     }
   }
   async getall(id:number){
