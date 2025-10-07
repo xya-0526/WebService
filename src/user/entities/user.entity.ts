@@ -1,3 +1,4 @@
+import { Discussion } from 'src/discussion/entities/discussion.entity';
 import { Artical } from '../../artical/entities/artical.entity';
 import { Avatar } from '../../avatar/entities/avatar.entity';
 import { Production } from '../../production/entities/production.entity';
@@ -28,4 +29,6 @@ export class User {
   articals: Artical[];
   @OneToMany(() => Production, (production) => production.user)
   productions: Production[];
+  @OneToMany(()=>Discussion,discussion=>discussion.user, {cascade:true})
+  discussions:Discussion[]
 }

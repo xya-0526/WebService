@@ -10,6 +10,7 @@ import { UploadModule } from './upload/upload.module';
 import { ArticalModule } from './artical/artical.module';
 import { ProductionModule } from './production/production.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { DiscussionModule } from './discussion/discussion.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -43,6 +44,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     UploadModule,
     ArticalModule,
     ProductionModule,
+    DiscussionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

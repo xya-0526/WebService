@@ -10,6 +10,8 @@ export class Production {
   desc: string;
   @Column()
   image: string;
+  @Column()
+  link:string
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createTime: Date;
   @Column({ default: 1 })

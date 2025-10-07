@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
@@ -49,4 +49,14 @@ export class UserService {
     await this.user.save(user);
     return { code: 0, message: '修改成功' };
   }
+    async getUserInof( id:number){
+          
+     const user= await this.user.findOne({where:{id},
+      relations:['avatar','articals','productions','discussions']
+      })
+      if(user)return {
+        code:0,
+        data:user
+      }
+    }
 }

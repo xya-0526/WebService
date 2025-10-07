@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsOptional, ValidationArguments } from 'class-validator';
-
+import { Column } from 'typeorm';
 export class CreateProductionDto {
   @IsNotEmpty({
     message: (args: ValidationArguments): string => {
@@ -21,4 +21,11 @@ export class CreateProductionDto {
   image: string;
   @IsOptional()
   status?: number;
+@IsNotEmpty({
+    message: (args: ValidationArguments): string => {
+      return `${args.property}不能为空`;
+    },
+  })
+  @Column()
+  link:string
 }
